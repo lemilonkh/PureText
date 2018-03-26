@@ -40,24 +40,28 @@
         <q-item @click.native="openURL('https://github.com/quasarframework/')">
           <q-item-side icon="code" />
           <q-item-main label="GitHub" sublabel="github.com/quasarframework" />
-        </q-item>-->
-        <q-item @click.native="changeView('timeline')">
+        </q-item>
+
+         //@click.native="changeView('timeline')"
+
+        -->
+        <q-item link to="/timeline">
           <q-item-side icon="timeline" />
           <q-item-main label="Timeline" sublabel="Edit linear audio tracks" />
         </q-item>
-        <q-item @click.native="changeView('mixer')">
+        <q-item link to="/mixer">
           <q-item-side icon="volume up" />
           <q-item-main label="Mixer" sublabel="Adjust sounds, volumes and effects" />
         </q-item>
-        <q-item @click.native="changeView('jam')">
+        <q-item link to="/jam">
           <q-item-side icon="audiotrack" />
           <q-item-main label="Jam" sublabel="Record and try out stuff" />
         </q-item>
-        <q-item @click.native="changeView('library')">
+        <q-item link to="/library">
           <q-item-side icon="library music" />
           <q-item-main label="Library" sublabel="Browse available synths, samples and effects" />
         </q-item>
-        <q-item @click.native="changeView('code')">
+        <q-item link to="/code">
           <q-item-side icon="code" />
           <q-item-main label="Code" sublabel="Edit your synths and effects" />
         </q-item>
