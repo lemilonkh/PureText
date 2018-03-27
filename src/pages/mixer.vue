@@ -8,11 +8,11 @@
     >
       <q-tr slot="body" slot-scope="props" :props="props" @click.native="rowClick(props.row)" class="cursor-pointer">
         <q-td v-for="col in props.cols" :key="col.name" :props="props">
-          <q-slider v-if="col.hasFader" v-model="props.row[col.name].volume" :min="-20" :max="2" step="0.01" :decimals="2" color="lime"/> <!-- dB -->
+          <q-slider v-if="col.hasFader" v-model="props.row.volume" :min="-20" :max="2" step="0.01" :decimals="2" color="lime" /> <!-- dB -->
           <p class="caption" v-if="col.hasFader">
             <span class="chip-container">
               <q-chip square color="secondary">
-                {{ props.row[col.name].volume }} dB
+                {{ props.row.volume }} dB
               </q-chip>
             </span>
           </p>
@@ -26,41 +26,38 @@
 const channelCount = 4
 const channelWidth = 200
 
-let channels = []
-let data = [{}]
+let columns = [{
+  name: 'volume',
+  required: false,
+  label: 'Volume',
+  align: 'center',
+  field: 'volume',
+  sortable: 'false',
+  width: channelWidth,
+  hasFader: true
+}]
 
+let tableData = [{}]
 for (let i = 0; i < channelCount; i++) {
-  let channelName = 'channel' + i
-  channels.push({
-    name: channelName,
-    required: false,
-    label: 'Channel #' + i,
-    align: 'center',
-    field: channelName,
-    sortable: true,
-    width: channelWidth,
-    hasFader: true
-  })
-
-  data[0][channelName] = {
-    volume: 1, // dB
+  tableData.push({
+    volume: 0, // dB
     solo: false,
     muted: false
-  }
+  })
 }
 
 export default {
   name: 'Mixer',
   data: () => ({
-    columns: channels,
-    tableData: data
+    columns,
+    tableData
   }),
   methods: {
     rowClick (row) {
       this.$q.notify({
         color: 'primary',
         icon: 'local_dining',
-        message: `Hmm, are you sure? Your base has ${row['channel0'].volume} decibels.`,
+        message: `Hmm, are you sure? Your base has ${row.volume} decibels.`,
         actions: [{
           label: 'Yes, listen!',
           handler: () => {
