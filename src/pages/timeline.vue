@@ -7,7 +7,8 @@
         </q-item-side>
       </q-list-header>
       <q-item>
-        <q-item-main label="Kick">
+        <q-item-side icon="play circle filled" />
+        <q-item-main>
           <av-bars
             audio-src="/statics/samples/kick.wav"
           />
@@ -23,13 +24,20 @@
       <q-item-separator />
       <q-list-header>Create new</q-list-header>
       <q-item>
+        <q-item-side icon="queue music" />
         <q-item-main label="Drum Loop" />
       </q-item>
       <q-item>
-        <q-item-main label="Melody" />
+        <q-item-side icon="music note" />
+        <q-item-main label="Synth" />
       </q-item>
       <q-item>
-        <q-item-main label="Synth" />
+        <q-item-side icon="play circle filled" />
+        <q-item-main label="Sample" />
+      </q-item>
+      <q-item>
+        <q-item-side icon="timeline" />
+        <q-item-main label="Automation" />
       </q-item>
     </q-list>
   </q-page>
