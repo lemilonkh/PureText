@@ -36,10 +36,6 @@
           <q-item-side icon="school" />
           <q-item-main label="Docs" sublabel="quasar-framework.org" />
         </q-item>
-        <q-item @click.native="openURL('https://github.com/quasarframework/')">
-          <q-item-side icon="code" />
-          <q-item-main label="GitHub" sublabel="github.com/quasarframework" />
-        </q-item>
 
          //@click.native="changeView('timeline')"
 
@@ -63,6 +59,11 @@
         <q-item link to="/code">
           <q-item-side icon="code" />
           <q-item-main label="Code" sublabel="Edit your synths and effects" />
+        </q-item>
+        <q-item-separator />
+        <q-item @click.native="openURL('https://github.com/lemilonkh/PureText')">
+          <q-item-side icon="code" />
+          <q-item-main label="Code on GitHub" sublabel="github.com/lemilonkh/PureText" />
         </q-item>
       </q-list>
     </q-layout-drawer>
