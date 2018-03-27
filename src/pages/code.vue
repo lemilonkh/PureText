@@ -1,6 +1,5 @@
 <template>
   <q-page class="flex flex-center fit round-borders">
-    <p>Code</p>
     <brace
       :fontsize="'22px'"
       :theme="'monokai'"
@@ -8,7 +7,9 @@
       :codefolding="'markbegin'"
       :softwrap="'free'"
       :selectionstyle="'text'"
-      :highlightline="true">
+      :highlightline="true"
+    >
+      Testerino
     </brace>
   </q-page>
 </template>

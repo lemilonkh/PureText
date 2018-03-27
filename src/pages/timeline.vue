@@ -8,9 +8,7 @@
       </q-list-header>
       <q-item>
         <q-item-main label="Kick">
-          <av-line
-            :line-width="2"
-            line-color="lime"
+          <av-bars
             audio-src="/statics/samples/kick.wav"
           />
         </q-item-main>
