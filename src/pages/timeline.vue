@@ -7,7 +7,7 @@
         </q-item-side>
       </q-list-header>
       <q-item>
-        <q-item-main label="John Doe">
+        <q-item-main label="Kick">
           <av-line
             :line-width="2"
             line-color="lime"
@@ -19,15 +19,21 @@
         </q-item-side>
       </q-item>
       <q-item>
-        <q-item-main label="Jim Doe">
+        <q-item-main label="Melody">
           <wavesurfer-player layout="modal" />
         </q-item-main>
         <q-item-side right icon="chat_bubble" />
       </q-item>
       <q-item-separator />
-      <q-list-header>Previous chats</q-list-header>
+      <q-list-header>Create new</q-list-header>
       <q-item>
-        <q-item-main label="Jack Doe" />
+        <q-item-main label="Drum Loop" />
+      </q-item>
+      <q-item>
+        <q-item-main label="Melody" />
+      </q-item>
+      <q-item>
+        <q-item-main label="Synth" />
       </q-item>
     </q-list>
   </q-page>
