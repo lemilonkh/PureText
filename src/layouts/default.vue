@@ -54,7 +54,7 @@
         <q-item-separator />
         <q-item @click.native="openURL('https://github.com/lemilonkh/PureText')">
           <q-item-side icon="code" />
-          <q-item-main label="Code on GitHub" sublabel="github.com/lemilonkh/PureText" />
+          <q-item-main label="PureText on GitHub" sublabel="github.com/lemilonkh/PureText" />
         </q-item>
       </q-list>
     </q-layout-drawer>
