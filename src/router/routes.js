@@ -14,6 +14,8 @@ let routes = pages.map((page) => {
   let path = '/'
   if (page === 'index') {
     page = 'timeline'
+  } else {
+    path += page
   }
   return makePage(page, path)
 })
