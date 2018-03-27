@@ -8,7 +8,8 @@ let makePage = (pageName, path) => {
   }
 }
 
-let pages = ['index', 'timeline', 'mixer', 'library'] // 'code'
+let pages = ['index', 'timeline', 'jam', 'mixer', 'library', 'code']
+
 let routes = pages.map((page) => {
   let path = '/'
   if (page === 'index') {
@@ -16,6 +17,7 @@ let routes = pages.map((page) => {
   }
   return makePage(page, path)
 })
+
 routes.push({ // Always leave this as last one
   path: '*',
   component: () => import('pages/404')
