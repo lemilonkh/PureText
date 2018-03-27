@@ -12,9 +12,11 @@
           </q-item-tile>
         </q-item-side>
         <q-item-main label="John Doe">
-          <av-bars
-            audio-src="/statics/samples/bass.wav">
-          </av-bars>
+          <av-line
+            :line-width="2"
+            line-color="lime"
+            audio-src="/statics/samples/kick.wav"
+          />
         </q-item-main>
         <q-item-side right>
           <q-item-tile icon="chat_bubble" color="green" />
