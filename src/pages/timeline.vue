@@ -2,15 +2,11 @@
   <q-page class="flex flex-center fit round-borders">
     <q-list highlight>
       <q-list-header>
-        <q-item-side icon="timeline" />
-        Timeline
+        <q-item-side icon="timeline">
+          Timeline
+        </q-item-side>
       </q-list-header>
       <q-item>
-        <q-item-side>
-          <q-item-tile avatar>
-            <img src="statics/boy-avatar.png">
-          </q-item-tile>
-        </q-item-side>
         <q-item-main label="John Doe">
           <av-line
             :line-width="2"
@@ -23,16 +19,14 @@
         </q-item-side>
       </q-item>
       <q-item>
-        <q-item-side avatar="statics/linux-avatar.png" />
         <q-item-main label="Jim Doe">
-          <wavesurfer-player layout="modal"></wavesurfer-player>
+          <wavesurfer-player layout="modal" />
         </q-item-main>
         <q-item-side right icon="chat_bubble" />
       </q-item>
       <q-item-separator />
       <q-list-header>Previous chats</q-list-header>
       <q-item>
-        <q-item-side avatar="statics/guy-avatar.png" />
         <q-item-main label="Jack Doe" />
       </q-item>
     </q-list>
