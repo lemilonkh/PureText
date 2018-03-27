@@ -8,7 +8,7 @@
     >
       <q-tr slot="body" slot-scope="props" :props="props" @click.native="rowClick(props.row)" class="cursor-pointer">
         <q-td v-for="col in props.cols" :key="col.name" :props="props">
-          <q-slider v-model="col.value.volume" :min="-20" :max="2" /> <!-- dB -->
+          <q-slider v-model="props.row[col.name].volume" :min="-20" :max="2" /> <!-- dB -->
         </q-td>
       </q-tr>
     </q-table>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-const channelCount = 16
+const channelCount = 4
 const channelWidth = 200
 
 let channels = []
@@ -49,11 +49,10 @@ export default {
   }),
   methods: {
     rowClick (row) {
-      console.log('Row', row)
       this.$q.notify({
         color: 'primary',
         icon: 'local_dining',
-        message: `Hmm, are you sure? It has ${row.volume} decibels.`,
+        message: `Hmm, are you sure? Your base has ${row['channel0'].volume} decibels.`,
         actions: [{
           label: 'Yes, listen!',
           handler: () => {
