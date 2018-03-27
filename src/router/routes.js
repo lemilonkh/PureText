@@ -1,30 +1,24 @@
-import Timeline from 'pages/timeline'
-import Mixer from 'pages/mixer'
-import Library from 'pages/library'
-// import Code from 'pages/code'
-import NotFoundPage from 'pages/404'
-
-export default [
-  {
-    path: '/',
+let makePage = (pageName, path) => {
+  return {
+    path,
     component: () => import('layouts/default'),
     children: [
-      { path: '', component: () => import('pages/index') }
+      { path: '', component: () => import('pages/' + pageName) }
     ]
-  }, {
-    path: '/timeline',
-    component: Timeline
-  }, {
-    path: '/mixer',
-    component: Mixer
-  }, {
-    path: '/library',
-    component: Library
-  }, /* {
-    path: '/code',
-    component: Code
-  }, */ { // Always leave this as last one
-    path: '*',
-    component: NotFoundPage
   }
-]
+}
+
+let pages = ['index', 'timeline', 'mixer', 'library'] // 'code'
+let routes = pages.map((page) => {
+  let path = '/'
+  if (page !== 'index') {
+    path += page
+  }
+  return makePage(page, path)
+})
+routes.push({ // Always leave this as last one
+  path: '*',
+  component: () => import('pages/404')
+})
+
+export default routes
