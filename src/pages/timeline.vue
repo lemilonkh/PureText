@@ -15,14 +15,14 @@
           />
         </q-item-main>
         <q-item-side right>
-          <q-item-tile icon="chat_bubble" color="green" />
+          <q-item-tile icon="drag handle" color="green" />
         </q-item-side>
       </q-item>
       <q-item>
         <q-item-main label="Melody">
           <wavesurfer-player layout="modal" />
         </q-item-main>
-        <q-item-side right icon="chat_bubble" />
+        <q-item-side right icon="drag handle" />
       </q-item>
       <q-item-separator />
       <q-list-header>Create new</q-list-header>
