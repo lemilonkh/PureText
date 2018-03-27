@@ -1,17 +1,26 @@
 <template>
   <q-page class="flex flex-center fit round-borders">
-    <q-editor
-      v-model="code"
-      :fonts="{
-        droid: 'Droid'
-      }"
-    />
+    <p>Code</p>
+    <brace
+      :fontsize="'22px'"
+      :theme="'monokai'"
+      :mode="'javascript'"
+      :codefolding="'markbegin'"
+      :softwrap="'free'"
+      :selectionstyle="'text'"
+      :highlightline="true">
+    </brace>
   </q-page>
 </template>
 
 <script>
+import Brace from 'vue-bulma-brace'
+
 export default {
   name: 'Code',
+  components: {
+    Brace
+  },
   data: () => ({
     code: '(print "Hello World")'
   })
