@@ -21,8 +21,9 @@
           <div v-if="col.name == 'muted'">
             <q-checkbox
               v-model="props.row.muted"
-              checked-icon="sentiment very satisfied"
-              unchecked-icon="sentiment very dissatisfied"
+              checked-icon="volume off"
+              unchecked-icon="volume up"
+              color="lime"
             />
           </div>
         </q-td>
