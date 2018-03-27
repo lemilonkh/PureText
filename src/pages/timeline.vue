@@ -11,7 +11,11 @@
             <img src="statics/boy-avatar.png">
           </q-item-tile>
         </q-item-side>
-        <q-item-main label="John Doe" />
+        <q-item-main label="John Doe">
+          <av-bars
+            audio-src="/static/bach.mp3">
+          </av-bars>
+        </q-item-main>
         <q-item-side right>
           <q-item-tile icon="chat_bubble" color="green" />
         </q-item-side>
