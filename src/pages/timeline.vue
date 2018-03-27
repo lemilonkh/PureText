@@ -13,7 +13,7 @@
         </q-item-side>
         <q-item-main label="John Doe">
           <av-bars
-            audio-src="/static/bach.mp3">
+            audio-src="/statics/samples/bass.wav">
           </av-bars>
         </q-item-main>
         <q-item-side right>
