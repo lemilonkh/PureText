@@ -18,12 +18,24 @@
               </span>
             </p>
           </div>
-          <div v-if="col.name == 'muted'">
+          <div v-if="col.name == 'buttons'">
             <q-checkbox
               v-model="props.row.muted"
               checked-icon="volume off"
               unchecked-icon="volume up"
-              color="lime"
+              color="grey"
+            />
+            <q-checkbox
+              v-model="props.row.solo"
+              checked-icon="headset mic"
+              unchecked-icon="headset mic"
+              color="orange"
+            />
+            <q-checkbox
+              v-model="props.row.live"
+              checked-icon="mic"
+              unchecked-icon="mic none"
+              color="red"
             />
           </div>
         </q-td>
@@ -47,12 +59,11 @@ let columns = [{
   width: volumeWidth,
   hasFader: true
 }, {
-  name: 'muted',
+  name: 'buttons',
   required: false,
-  label: 'Muted',
-  align: 'center',
-  field: 'muted',
-  sortable: true,
+  label: 'Buttons',
+  align: 'right',
+  sortable: false,
   width: mutedWidth,
   hasFader: false
 }]
@@ -62,7 +73,8 @@ for (let i = 0; i < channelCount; i++) {
   tableData.push({
     volume: 0, // dB
     solo: false,
-    muted: false
+    muted: false,
+    live: false
   })
 }
 
