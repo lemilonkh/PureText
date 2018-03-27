@@ -8,23 +8,24 @@
   <div id="waveform" />
 
   <div class="controls">
-    <div class="play-pause-btn play" v-if="layout == 'modal'" v-on:click="togglePlayPause($event)">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle-thin fa-stack-2x"></i>
-        <i class="fa fa-play" aria-hidden="true"></i>
-      </span>
-    </div>
-    <div class="btn-prev" v-on:click="playPrev()">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle-thin fa-stack-2x"></i>
-        <i class="fa fa-backward" aria-hidden="true"></i>
-      </span>
-    </div>
-    <div class="btn-next" v-on:click="playNext()">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle-thin fa-stack-2x"></i>
-        <i class="fa fa-forward" aria-hidden="true"></i>
-      </span>
+    <div v-if="layout == 'modal'">
+      <q-btn
+        icon="skip previous"
+        v-on:click="playPrev()"
+      />
+      <q-btn>
+        <q-checkbox
+          v-model="playing"
+          checked-icon="play arrow"
+          unchecked-icon="pause"
+          color="deep-orange"
+        />
+      </q-btn>
+      <!--  v-on:click="togglePlayPause($event)" -->
+      <q-btn
+        icon="skip next"
+        v-on:click="playNext()"
+      />
     </div>
   </div>
 
@@ -54,7 +55,8 @@ export default {
           src: 'https://downloads.arturia.com/products/synthwave/preset/audio_examples/Prophet_V__Sample_Magic.mp3',
           isActive: true
         }
-      ]
+      ],
+      playing: false
     }
   },
   methods: {
