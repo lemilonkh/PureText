@@ -10,6 +10,10 @@
         <q-item-side icon="play circle filled" />
         <q-item-main>
           <av-bars
+            caps-color="#F50"
+            :bar-color="['#f00', '#ff0', '#0f0']"
+            canv-fill-color="#000"
+            :caps-height="2"
             audio-src="/statics/samples/kick.wav"
           />
         </q-item-main>
