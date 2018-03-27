@@ -29,14 +29,14 @@
     </div>
   </div>
 
-  <div class="playlist" v-for="source in sources" v-bind:key="source.name">
+  <!--<div :v-if="showPlaylist" class="playlist" v-for="source in sources" v-bind:key="source.name">
     <div class="demo-song" v-bind:class="{active: source.isActive}">
       <div class="demo-title"><b>{{source.title}}</b></div>
       <div class="artist-name">{{source.name}}</div>
       <div class="demo-src">{{source.src}}</div>
       <div class="demo-desc"></div>
     </div>
-  </div>
+  </div>-->
 </div>
 </template>
 
@@ -56,7 +56,8 @@ export default {
           isActive: true
         }
       ],
-      playing: false
+      playing: false,
+      showPlaylist: false
     }
   },
   methods: {
