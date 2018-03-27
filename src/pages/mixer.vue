@@ -2,9 +2,10 @@
   <q-page class="flex flex-center fit round-borders">
     <q-table
       title="Mixer"
+      row-key="name"
       :data="tableData"
       :columns="columns"
-      row-key="name"
+      :hide-bottom="true"
     >
       <q-tr slot="body" slot-scope="props" :props="props" @click.native="rowClick(props.row)" class="cursor-pointer">
         <q-td v-for="col in props.cols" :style="{width: col.width + 'px'}" :key="col.name" :props="props">
