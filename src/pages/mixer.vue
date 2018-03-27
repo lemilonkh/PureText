@@ -8,14 +8,23 @@
     >
       <q-tr slot="body" slot-scope="props" :props="props" @click.native="rowClick(props.row)" class="cursor-pointer">
         <q-td v-for="col in props.cols" :key="col.name" :props="props">
-          <q-slider v-if="col.hasFader" v-model="props.row.volume" :min="-20" :max="2" :step="0.01" :decimals="2" color="lime" :fill-handle-always="true" /> <!-- dB -->
-          <p class="caption" v-if="col.hasFader">
-            <span class="chip-container">
-              <q-chip square color="secondary">
-                {{ props.row.volume }} dB
-              </q-chip>
-            </span>
-          </p>
+          <div v-if="col.hasFader">
+            <q-slider v-model="props.row.volume" :min="-20" :max="2" :step="0.01" :decimals="2" color="lime" :fill-handle-always="true" /> <!-- dB -->
+            <p class="caption" v-if="col.hasFader">
+              <span class="chip-container">
+                <q-chip square color="secondary">
+                  {{ props.row.volume }} dB
+                </q-chip>
+              </span>
+            </p>
+          </div>
+          <div v-if="col.name == 'muted'">
+            <q-checkbox
+              v-model="props.row.muted"
+              checked-icon="sentiment very satisfied"
+              unchecked-icon="sentiment very dissatisfied"
+            />
+          </div>
         </q-td>
       </q-tr>
     </q-table>
@@ -24,7 +33,8 @@
 
 <script>
 const channelCount = 4
-const channelWidth = 200
+const volumeWidth = 200
+const mutedWidth = 40
 
 let columns = [{
   name: 'volume',
@@ -32,9 +42,18 @@ let columns = [{
   label: 'Volume',
   align: 'center',
   field: 'volume',
-  sortable: 'false',
-  width: channelWidth,
+  sortable: false,
+  width: volumeWidth,
   hasFader: true
+}, {
+  name: 'muted',
+  required: false,
+  label: 'Muted',
+  align: 'center',
+  field: 'muted',
+  sortable: true,
+  width: mutedWidth,
+  hasFader: false
 }]
 
 let tableData = []
