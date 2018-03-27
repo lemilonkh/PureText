@@ -18,22 +18,22 @@
           </div>
           <div v-if="col.name == 'buttons'">
             <q-checkbox
-              v-model="props.row.muted"
-              checked-icon="volume off"
-              unchecked-icon="volume up"
-              color="grey"
-            />
-            <q-checkbox
               v-model="props.row.solo"
               checked-icon="headset mic"
               unchecked-icon="headset mic"
-              color="orange"
+              color="amber"
+            />
+            <q-checkbox
+              v-model="props.row.muted"
+              checked-icon="volume off"
+              unchecked-icon="volume up"
+              color="green"
             />
             <q-checkbox
               v-model="props.row.live"
               checked-icon="mic"
               unchecked-icon="mic none"
-              color="red"
+              color="deep-orange"
             />
           </div>
         </q-td>
@@ -60,7 +60,7 @@ let columns = [{
   name: 'buttons',
   required: false,
   label: 'Buttons',
-  align: 'right',
+  align: 'center',
   sortable: false,
   width: mutedWidth,
   hasFader: false
