@@ -8,7 +8,7 @@
     >
       <q-tr slot="body" slot-scope="props" :props="props" @click.native="rowClick(props.row)" class="cursor-pointer">
         <q-td v-for="col in props.cols" :key="col.name" :props="props">
-          # {{ col.value }} #
+          <q-slider v-model="col.value.volume" :min="-20" :max="2" /> <!-- dB -->
         </q-td>
       </q-tr>
     </q-table>
@@ -35,7 +35,7 @@ for (let i = 0; i < channelCount; i++) {
   })
 
   data[0][channelName] = {
-    volume: 1,
+    volume: 1, // dB
     solo: false,
     muted: false
   }
@@ -46,7 +46,23 @@ export default {
   data: () => ({
     columns: channels,
     tableData: data
-  })
+  }),
+  methods: {
+    rowClick (row) {
+      console.log('Row', row)
+      this.$q.notify({
+        color: 'primary',
+        icon: 'local_dining',
+        message: `Hmm, are you sure? It has ${row.volume} decibels.`,
+        actions: [{
+          label: 'Yes, listen!',
+          handler: () => {
+            this.$q.notify({ color: 'positive', icon: 'done', message: 'Yummy. Thanks! Now one more with sweet and sour beat sauce.' })
+          }
+        }]
+      })
+    }
+  }
 }
 </script>
 
