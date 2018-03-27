@@ -11,8 +11,8 @@ let makePage = (pageName, path) => {
 let pages = ['index', 'timeline', 'mixer', 'library'] // 'code'
 let routes = pages.map((page) => {
   let path = '/'
-  if (page !== 'index') {
-    path += page
+  if (page === 'index') {
+    page = 'timeline'
   }
   return makePage(page, path)
 })
