@@ -3,7 +3,7 @@
     <q-layout-header>
       <q-toolbar
         color="primary"
-        inverted="true"
+        :inverted="true"
       >
         <q-btn
           flat
