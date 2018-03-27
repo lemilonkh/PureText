@@ -24,7 +24,9 @@
       </q-item>
       <q-item>
         <q-item-side avatar="statics/linux-avatar.png" />
-        <q-item-main label="Jim Doe" />
+        <q-item-main label="Jim Doe">
+          <wavesurfer-player layout="modal"></wavesurfer-player>
+        </q-item-main>
         <q-item-side right icon="chat_bubble" />
       </q-item>
       <q-item-separator />
@@ -42,7 +44,12 @@
 </style>
 
 <script>
+import WavesurferPlayer from 'components/wavesurfer-player'
+
 export default {
-  name: 'Timeline'
+  name: 'Timeline',
+  components: {
+    WavesurferPlayer
+  }
 }
 </script>
