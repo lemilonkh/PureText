@@ -10,12 +10,17 @@
       <q-tr slot="body" slot-scope="props" :props="props" @click.native="rowClick(props.row)" class="cursor-pointer">
         <q-td v-for="col in props.cols" :style="{width: col.width + 'px'}" :key="col.name" :props="props">
           <div v-if="col.hasFader">
-            <q-slider v-model="props.row.volume" :min="-20" :max="2" :step="0.01" :decimals="2" color="lime" :fill-handle-always="true" /> <!-- dB -->
-            <p class="caption" v-if="col.hasFader">
-              <span class="chip-container">
-                {{ props.row.volume }} dB
-              </span>
-            </p>
+            <q-slider
+              v-model="props.row.volume"
+              :label-value="`${props.row.volume} dB`"
+              label-always
+              :min="-20"
+              :max="2"
+              :step="0.01"
+              :decimals="2"
+              color="teal"
+              :fill-handle-always="true"
+            />
           </div>
           <div v-if="col.name == 'buttons'">
             <q-checkbox
@@ -28,7 +33,7 @@
               v-model="props.row.muted"
               checked-icon="volume off"
               unchecked-icon="volume up"
-              color="green"
+              color="lime"
             />
             <q-checkbox
               v-model="props.row.live"
