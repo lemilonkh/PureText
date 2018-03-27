@@ -61,7 +61,7 @@ export default {
     }
   },
   methods: {
-    initWaveSurf (self) {
+    initWaveSurf () {
       this.wavesurfer = WaveSurfer.create({
         container: '#waveform',
         barWidth: 1,
@@ -127,12 +127,11 @@ export default {
         targetClasses.remove('pause')
         targetClasses.add('play')
       }
-    },
-
-    mounted () {
-      this.initWaveSurf(this)
-      this.addWaveSurfListeners()
     }
+  },
+  created () {
+    this.initWaveSurf()
+    this.addWaveSurfListeners()
   }
 }
 </script>

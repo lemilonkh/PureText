@@ -14,9 +14,7 @@
             audio-src="/statics/samples/kick.wav"
           />
         </q-item-main>
-        <q-item-side right>
-          <q-item-tile icon="drag handle" color="green" />
-        </q-item-side>
+        <q-item-side right icon="drag handle" />
       </q-item>
       <q-item>
         <q-item-main label="Melody">
