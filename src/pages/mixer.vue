@@ -12,9 +12,7 @@
             <q-slider v-model="props.row.volume" :min="-20" :max="2" :step="0.01" :decimals="2" color="lime" :fill-handle-always="true" /> <!-- dB -->
             <p class="caption" v-if="col.hasFader">
               <span class="chip-container">
-                <q-chip square color="secondary">
-                  {{ props.row.volume }} dB
-                </q-chip>
+                {{ props.row.volume }} dB
               </span>
             </p>
           </div>
