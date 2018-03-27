@@ -31,26 +31,17 @@
         link
         inset-delimiter
       >
-        <!--<q-list-header>Essential Links</q-list-header>
-        <q-item @click.native="openURL('http://quasar-framework.org')">
-          <q-item-side icon="school" />
-          <q-item-main label="Docs" sublabel="quasar-framework.org" />
-        </q-item>
-
-         //@click.native="changeView('timeline')"
-
-        -->
         <q-item link to="/timeline">
           <q-item-side icon="timeline" />
           <q-item-main label="Timeline" sublabel="Edit linear audio tracks" />
         </q-item>
-        <q-item link to="/mixer">
-          <q-item-side icon="volume up" />
-          <q-item-main label="Mixer" sublabel="Adjust sounds and effects" />
-        </q-item>
         <q-item link to="/jam">
           <q-item-side icon="audiotrack" />
           <q-item-main label="Jam" sublabel="Record and try out stuff" />
+        </q-item>
+        <q-item link to="/mixer">
+          <q-item-side icon="volume up" />
+          <q-item-main label="Mixer" sublabel="Adjust sounds and effects" />
         </q-item>
         <q-item link to="/library">
           <q-item-side icon="library music" />
