@@ -8,7 +8,7 @@
     >
       <q-tr slot="body" slot-scope="props" :props="props" @click.native="rowClick(props.row)" class="cursor-pointer">
         <q-td v-for="col in props.cols" :key="col.name" :props="props">
-          <q-slider v-if="col.hasFader" v-model="props.row.volume" :min="-20" :max="2" step="0.01" :decimals="2" color="lime" /> <!-- dB -->
+          <q-slider v-if="col.hasFader" v-model="props.row.volume" :min="-20" :max="2" :step="0.01" :decimals="2" color="lime" /> <!-- dB -->
           <p class="caption" v-if="col.hasFader">
             <span class="chip-container">
               <q-chip square color="secondary">
