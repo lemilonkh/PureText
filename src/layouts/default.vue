@@ -3,7 +3,7 @@
     <q-layout-header>
       <q-toolbar
         color="primary"
-        :inverted="$q.theme === 'ios'"
+        inverted="true"
       >
         <q-btn
           flat
@@ -16,8 +16,8 @@
         </q-btn>
 
         <q-toolbar-title>
-          Quasar App
-          <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
+          Pure Text
+          <div slot="subtitle">DAW by YWF's Algh0st - v0.0.1</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
