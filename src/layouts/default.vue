@@ -46,7 +46,7 @@
         </q-item>
         <q-item link to="/mixer">
           <q-item-side icon="volume up" />
-          <q-item-main label="Mixer" sublabel="Adjust sounds, volumes and effects" />
+          <q-item-main label="Mixer" sublabel="Adjust sounds and effects" />
         </q-item>
         <q-item link to="/jam">
           <q-item-side icon="audiotrack" />
@@ -54,7 +54,7 @@
         </q-item>
         <q-item link to="/library">
           <q-item-side icon="library music" />
-          <q-item-main label="Library" sublabel="Browse available synths, samples and effects" />
+          <q-item-main label="Library" sublabel="Browse available sounds" />
         </q-item>
         <q-item link to="/code">
           <q-item-side icon="code" />
