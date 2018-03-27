@@ -74,17 +74,18 @@ export default {
   }),
   methods: {
     rowClick (row) {
-      this.$q.notify({
-        color: 'primary',
-        icon: 'local_dining',
-        message: `Hmm, are you sure? Your base has ${row.volume} decibels.`,
-        actions: [{
-          label: 'Yes, listen!',
-          handler: () => {
-            this.$q.notify({ color: 'positive', icon: 'done', message: 'Yummy. Thanks! Now one more with sweet and sour beat sauce.' })
-          }
-        }]
-      })
+      // TODO remove
+      // this.$q.notify({
+      //   color: 'primary',
+      //   icon: 'local_dining',
+      //   message: `Hmm, are you sure? Your base has ${row.volume} decibels.`,
+      //   actions: [{
+      //     label: 'Yes, listen!',
+      //     handler: () => {
+      //       this.$q.notify({ color: 'positive', icon: 'done', message: 'Yummy. Thanks! Now one more with sweet and sour beat sauce.' })
+      //     }
+      //   }]
+      // })
     }
   }
 }
