@@ -3,6 +3,7 @@
     <q-layout-header>
       <q-toolbar
         color="black"
+        id="main-toolbar"
         :inverted="true"
       >
         <q-btn
@@ -23,6 +24,7 @@
     </q-layout-header>
 
     <q-layout-drawer
+      class="main-menu"
       v-model="leftDrawerOpen"
       :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
     >
@@ -81,5 +83,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus">
+.main-toolbar, .main-menu
+  color: white
+  background-color: $body-background
+
 </style>
