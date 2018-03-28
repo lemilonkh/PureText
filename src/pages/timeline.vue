@@ -15,6 +15,7 @@
             canv-fill-color="#000"
             :caps-height="2"
             :audio-controls="false"
+            :symmetric="true"
             audio-src="/statics/samples/kick.wav"
           />
         </q-item-main>
@@ -22,7 +23,7 @@
       </q-item>
       <q-item>
         <q-item-main label="Melody">
-          <wavesurfer-player layout="modal" />
+          <!--<wavesurfer-player layout="modal" />-->
         </q-item-main>
         <q-item-side right icon="drag handle" />
       </q-item>
