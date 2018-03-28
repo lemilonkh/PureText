@@ -1,22 +1,26 @@
 <template>
   <q-page class="flex flex-center fit round-borders">
-    <q-table
-      title="Jam"
-      row-key="name"
-      :data="tableData"
-      :columns="columns"
-      :hide-bottom="true"
+    <draggable
+      v-model="sounds"
+      :options="{group: 'sounds'}"
+      @start="drag=true"
+      @end="drag=false"
     >
-      <q-tr slot="body" slot-scope="props" :props="props" @click.native="rowClick(props.row)" class="cursor-pointer">
-        <q-td v-for="col in props.cols" :style="{width: col.width + 'px'}" :key="col.name" :props="props">
-          Track {{col.name}}
-        </q-td>
-      </q-tr>
-    </q-table>
+      <div
+        v-for="sound in sounds"
+        :key="sound.id"
+        class="sound"
+        :style="{backgroundColor: `sound.color`}"
+      >
+        {{sound.name}}
+      </div>
+    </draggable>
   </q-page>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 const rowCount = 4
 const volumeWidth = 200
 const mutedWidth = 40
@@ -50,12 +54,22 @@ for (let i = 0; i < rowCount; i++) {
   })
 }
 
+let sounds = [
+  {name: 'Base drum', id: 'sample0', color: '#a20'},
+  {name: 'Snare drum', id: 'sample1', color: '#ea2'},
+  {name: 'Closed HiHat', id: 'sample2', color: '#cfc'}
+]
+
 export default {
   name: 'Jam',
   data: () => ({
     columns,
-    tableData
+    tableData,
+    sounds
   }),
+  components: {
+    draggable
+  },
   methods: {
     rowClick (row) {
       console.log('Click', row)
@@ -65,5 +79,16 @@ export default {
 </script>
 
 <style scoped>
+.sound {
+  width: 250px;
+  height: 50px;
+  border: 1px solid #bbb;
 
+  padding: 10px;
+  margin: 10px;
+
+  background-color: #eee;
+
+  border-radius: 5px;
+}
 </style>
