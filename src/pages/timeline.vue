@@ -14,6 +14,7 @@
             :bar-color="['#f00', '#ff0', '#0f0']"
             canv-fill-color="#000"
             :caps-height="2"
+            :audio-controls="false"
             audio-src="/statics/samples/kick.wav"
           />
         </q-item-main>
